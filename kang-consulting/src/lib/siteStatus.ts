@@ -1,4 +1,4 @@
-export const SITE_DOWN = true;
+export const SITE_DOWN = false;
 
 export const MAINTENANCE_TITLE = "Website down until further notice";
 export const MAINTENANCE_HEADING = "Website down until further notice.";
