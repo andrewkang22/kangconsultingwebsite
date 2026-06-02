@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 30" width="210" height="30">
+  <style>
+    tspan { white-space:pre }
+    .t0 { font-size: 26px; fill: #000000; font-weight: 400; font-family: "ShipporiMincho-Regular", "Shippori Mincho" }
+  </style>
+  <text id="Kang Consulting" style="transform: matrix(1,0,0,1,0,22.88)">
+    <tspan x="0" y="0" class="t0">Kang Consulting</tspan>
+  </text>
+</svg>

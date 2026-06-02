@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f5f4f1;
+  --foreground: #0b0b0b;
+  --surface: #ffffff;
+  --surface-muted: #f9f7f4;
+  --border-color: #dcd7d0;
+  --border-strong: #101010;
+  --accent: #0f172a;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --shadow-soft: 0 12px 28px rgba(15, 15, 15, 0.08);
+  --shadow-hard: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --font-geist-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-geist-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  --font-shippori-mincho: Georgia, "Times New Roman", serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-fancy: var(--font-shippori-mincho);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), "Inter", Arial, sans-serif;
+  line-height: 1.55;
+  font-feature-settings: "ss01" on, "ss03" on;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+html {
+  overflow-x: clip;
+}
+
+.acceptance-marquee {
+  --acceptance-gap: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  contain: paint;
+  padding-block: 1rem 1.5rem;
+}
+
+.acceptance-marquee::before,
+.acceptance-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  width: min(12vw, 8rem);
+  pointer-events: none;
+}
+
+.acceptance-marquee::before {
+  left: 0;
+  background: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0));
+}
+
+.acceptance-marquee::after {
+  right: 0;
+  background: linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0));
+}
+
+.acceptance-marquee__track {
+  display: flex;
+  width: max-content;
+  gap: var(--acceptance-gap);
+  animation: acceptance-marquee-scroll 48s linear infinite;
+  will-change: transform;
+}
+
+.acceptance-marquee:hover .acceptance-marquee__track,
+.acceptance-marquee:focus-within .acceptance-marquee__track {
+  animation-play-state: paused;
+}
+
+.acceptance-marquee__group {
+  display: flex;
+  gap: var(--acceptance-gap);
+}
+
+@keyframes acceptance-marquee-scroll {
+  to {
+    transform: translateX(calc(-50% - (var(--acceptance-gap) / 2)));
+  }
+}
+
+@media (max-width: 640px) {
+  .acceptance-marquee {
+    --acceptance-gap: 1rem;
+    margin-inline: -1rem;
+    padding-inline: 1rem;
+  }
+
+  .acceptance-marquee::before,
+  .acceptance-marquee::after {
+    width: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .acceptance-marquee__track {
+    animation-duration: 0.001ms;
+    animation-iteration-count: 1;
+  }
+}

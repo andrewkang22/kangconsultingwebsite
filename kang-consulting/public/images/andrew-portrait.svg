@@ -1,0 +1,19 @@
+<svg width="480" height="600" viewBox="0 0 480 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#ECFEFF"/>
+    </linearGradient>
+  </defs>
+  <rect x="16" y="16" width="448" height="568" rx="28" fill="url(#bg)"/>
+  <rect x="16" y="16" width="448" height="568" rx="28" stroke="#E5E7EB" stroke-width="2"/>
+
+  <!-- Head -->
+  <circle cx="240" cy="210" r="76" fill="#D1FAE5"/>
+  <!-- Neck -->
+  <rect x="214" y="270" width="52" height="28" rx="12" fill="#D1FAE5"/>
+  <!-- Shoulders / Torso -->
+  <path d="M120 420c0-66 54-120 120-120s120 54 120 120v48H120v-48z" fill="#34D399"/>
+  <!-- Accent -->
+  <path d="M240 300c40 0 84 16 112 44-20 12-52 20-112 20s-92-8-112-20c28-28 72-44 112-44z" fill="#22D3EE" opacity="0.35"/>
+</svg>

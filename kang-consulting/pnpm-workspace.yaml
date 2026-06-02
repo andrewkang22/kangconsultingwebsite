@@ -1,0 +1,19 @@
+minimumReleaseAge: 10080
+minimumReleaseAgeExclude:
+  - "@vercel/analytics"
+  - "@vercel/speed-insights"
+trustPolicy: no-downgrade
+trustPolicyExclude:
+  - eslint-import-resolver-typescript@3.10.1
+  - semver@6.3.1
+
+overrides:
+  "flat-cache>flatted": 3.4.2
+  "micromatch>picomatch": 2.3.2
+  "minimatch@3.1.5>brace-expansion": 1.1.14
+  postcss: 8.5.14
+
+allowBuilds:
+  msgpackr-extract: true
+  sharp: true
+  unrs-resolver: true
